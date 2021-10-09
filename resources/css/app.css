@@ -1,0 +1,34 @@
+@import url("bootstrap/css/bootstrap.min.css");
+/*@import url("/node_modules/jquery-ui/jquery-ui.min.css");
+@import url("//node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css");*/
+@font-face{
+	font-family: 'Bizon';
+	src:  url(
+		"/fonts/Bizon.otf"
+		);
+}
+
+body {
+	font-family: "Bizon", sans-serif;
+	background-image: url("http://localhost/tamixMultimedios/public/img/fondo.png");
+	background-size: cover;
+}
+
+.container {
+    height: auto;
+}
+
+ .footerBg{
+     background-image: url("http://localhost/tamixMultimedios/public/img/footer.png");
+     background-size: cover;
+ }
+
+ form, table, #datatable{
+     font-family: "Verdana", sans-serif;
+ }
+
+ #resultados{
+    height: 720px;
+    overflow: auto;
+ }
+

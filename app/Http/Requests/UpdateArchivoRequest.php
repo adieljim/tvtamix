@@ -33,6 +33,7 @@ class UpdateArchivoRequest extends FormRequest
             'codec_bc' => ['required'],
             'huella_digital_video_ac' => ['required'],
             'huella_digital_video_bc' => ['required'],
+            //'fotogramas' => '',
             'fecha_digitalizacion'  => ['required'],
 
             'lengua' => ['required'],

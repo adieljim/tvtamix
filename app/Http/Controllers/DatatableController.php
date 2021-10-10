@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Archivo;
+use App\Models\Fotograma;
 use App\Models\InfoGeneral;
 
 class DatatableController extends Controller
@@ -68,7 +69,6 @@ class DatatableController extends Controller
             'archivos.id',
             'archivos.clave',
             'archivos.titulo_original',
-            'archivos.fotogramas',
             'ficha_tecnica.sinopsis',
             'info_general.indice_tematico'
             )
@@ -80,10 +80,20 @@ class DatatableController extends Controller
             })
             ->orderBy('archivos.id')
             ->get();
+            
+        foreach($data as $dat){
+            $fotogramas = Fotograma::select('*')
+            ->where('id', $dat->id)
+            ->orderBy('numFoto')
+            ->get();
+
+            $dat->offsetSet('fotogramas', $fotogramas);
+        }
+
 
         return response()->json([
             "data" => $data,
-            "indices" => $indices,
+            "indices" => $indices
         ]);
     }
 }

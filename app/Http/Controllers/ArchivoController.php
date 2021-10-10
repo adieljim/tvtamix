@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Psy\Command\ListCommand\PropertyEnumerator;
 
 class ArchivoController extends Controller
 {
@@ -143,6 +144,8 @@ class ArchivoController extends Controller
     {
         $ficha = FichaTecnica::find($archivo->id);
         $info = InfoGeneral::find($archivo->id);
+        $fotogramas = Fotograma::select('*')->where('id', $archivo->id)->get();
+        $archivo->offsetSet("fotogramas", $fotogramas);
         $data = [
             'ficha' => $ficha,
             'info' => $info,
@@ -190,20 +193,25 @@ class ArchivoController extends Controller
     {
         $id = $archivo->id;
 
-        $file = $request->file('fotogramas');
+        $files = $request->file('fotogramas');
 
         /*
          ** Validacion que indica si se subio un nuevo fotograma,
          ** se borra el archivo anterior, y luego se guarda el nuevo.
          */
-        if ($file != null) {
-            Storage::delete($archivo->fotogramas);
+        if ($files != null) {
+            $fotogramas = Fotograma::select('nombre')->where('id',$archivo->id)->get();
+
             Fotograma::destroy($id);
+
+            foreach ($fotogramas as $foto){
+                Storage::delete('public/fotogramas/'.$foto->nombre);
+            }
             /***
              * guardar imagenes
              */
             $count = 0;
-            foreach ($request->file('fotogramas') as $file) {
+            foreach ($files as $file) {
                 $count++;
                 /**
                  * Nombre del fotograma, con el prefijo fotograma_ y la hora de guardado.
@@ -287,7 +295,7 @@ class ArchivoController extends Controller
         /*
          ** Elimina el archivo asociado al archivo
          */
-        $fotogramas = Fotograma::select('nombre')->where('id',$archivo->id);
+        $fotogramas = Fotograma::select('nombre')->where('id',$archivo->id)->get();
         Fotograma::destroy($archivo->id);
 
         foreach ($fotogramas as $foto){

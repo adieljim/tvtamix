@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Archivo;
+use App\Models\Fotograma;
 use App\Models\InfoGeneral;
 use Exception;
 
@@ -59,6 +60,15 @@ class BuscarController extends Controller
                     ->where('info_general.'.$param, 'LIKE', '%'.$term.'%')
                     ->get();
 
+                    foreach($querys as $dat){
+                        $fotogramas = Fotograma::select('*')
+                        ->where('id', $dat->id)
+                        ->orderBy('numFoto')
+                        ->get();
+
+                        $dat->offsetSet('fotogramas', $fotogramas);
+                    }
+
                     return response()->json([
                         "error" => false,
                         "archivo" => $querys
@@ -76,6 +86,16 @@ class BuscarController extends Controller
                         })
                         ->where('archivos.'.$param, 'LIKE', '%'.$term.'%')
                         ->get();
+
+
+                        foreach($querys as $dat){
+                            $fotogramas = Fotograma::select('*')
+                            ->where('id', $dat->id)
+                            ->orderBy('numFoto')
+                            ->get();
+
+                            $dat->offsetSet('fotogramas', $fotogramas);
+                        }
 
                     return response()->json([
                         "error" => false,

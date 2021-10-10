@@ -216,8 +216,8 @@
 
 					<div class="col-6">
 						<label for="" class="form-label">Fotogramas de Referencia</label>
-						<input type="file" name="fotogramas" multiple class="form-control @error('fotogramas') is-invalid @enderror" id="fotogramas">
-						@error('fotogramas')
+						<input type="file" name="fotogramas[]" multiple class="form-control @error('fotogramas[]') is-invalid @enderror" id="fotogramas[]" accept=".jpg, .jpeg, .png">
+						@error('fotogramas[]')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

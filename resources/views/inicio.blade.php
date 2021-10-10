@@ -193,7 +193,7 @@
                         "</div>" +
                         "<div class='card-body'>" +
                         "<div class='row'><div class='col-2'>" +
-                        "<img src='http://localhost/tamixMultimedios/storage/app/" + data['data'][key].fotogramas + "' width='100px'> " +
+                        "<img src='http://localhost/tamixMultimedios/storage/app/" + data['fotogramas'][key].fotogramas + "' width='100px'> " +
                         "</div>" +
                         "<div class='col-10'><p class='card-text'>" +
                         "Clave: " + data['data'][key].clave +

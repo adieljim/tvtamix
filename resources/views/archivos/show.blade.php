@@ -70,7 +70,7 @@
 		</tr>
 		<tr>
 			<th>Fotogramas</th>
-			<td>{{$archivo->fotogramas}}</td>
+			<td>{{$archivo->fotogramas[0]->nombre}}</td>
 		</tr>
 		<tr class="text-center">
 			<th>Ficha Técnica</th>

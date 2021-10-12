@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Archivo;
 use App\Models\FichaTecnica;
+use App\Models\Fotograma;
 use App\Models\InfoGeneral;
-use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class GeneraPDFController extends Controller
 {
@@ -14,13 +15,17 @@ class GeneraPDFController extends Controller
         $archivo = Archivo::find($id);
         $ficha = FichaTecnica::find($id);
         $info = InfoGeneral::find($id);
+        $fotogramas = Fotograma::select('*')->where('id', $id)->get();
+        $archivo->offsetSet("fotogramas", $fotogramas);
         $data = [
             'ficha' => $ficha,
             'info' => $info,
-            'archivo' => $archivo
+            'archivo' => $archivo,
         ];
 
-        $pdf = PDF::loadView('archivos.showDocument', ['data' => $data]);
+        $pdf = PDF::loadView('archivos.showDocument', compact('data'));
+        $pdf->setOptions (['defaultFont' => 'sans-serif' ]);
+
         return $pdf->stream();
     }
 }

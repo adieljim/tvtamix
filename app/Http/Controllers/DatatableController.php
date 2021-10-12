@@ -30,7 +30,7 @@ class DatatableController extends Controller
                 @csrf
                 @method(\'DELETE\')
                 <button type="submit" class="badge bg-danger" id="del">
-                <img src="{{ asset("/img/pencil-square.svg") }}"/>
+                <img src="{{ asset("/img/trash.svg") }}"/>
                 </button>
                 </form>'
             )
@@ -80,7 +80,7 @@ class DatatableController extends Controller
             })
             ->orderBy('archivos.id')
             ->get();
-            
+
         foreach($data as $dat){
             $fotogramas = Fotograma::select('*')
             ->where('id', $dat->id)

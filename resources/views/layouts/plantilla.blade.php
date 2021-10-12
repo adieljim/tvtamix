@@ -17,7 +17,7 @@
 	<title>@yield('title', env('APP_NAME'))</title>
 </head>
 <body>
-	<x-header/>
+    @yield('header')
 	<div class="container">
 
         @if(session("mensaje") && session("tipo"))

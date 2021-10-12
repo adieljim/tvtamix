@@ -12,6 +12,10 @@
 
 @section('title') Nuevo Archivo @endsection
 
+@section('header')
+    <x-header/>
+@endsection
+
 @section('content')
 
 <script type="text/javascript">

@@ -47,6 +47,7 @@ class BuscarController extends Controller
     public function buscar(Request $request){
         $term = $request->get('term');
         $param = $request->get('param');
+        //dd($request);
         try{
            if(!empty($term)){
                 if ($param == 'personajes_principales'){

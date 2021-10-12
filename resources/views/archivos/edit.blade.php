@@ -11,6 +11,10 @@
     </style>
 @endsection
 
+@section('header')
+    <x-header/>
+@endsection
+
 @section('content')
 
 <script type="text/javascript">

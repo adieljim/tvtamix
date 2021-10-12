@@ -299,7 +299,6 @@ class ArchivoController extends Controller
         Fotograma::destroy($archivo->id);
 
         foreach ($fotogramas as $foto){
-            var_dump($foto);
             Storage::delete('public/fotogramas/'.$foto->nombre);
         }
 

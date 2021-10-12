@@ -23,12 +23,26 @@ body {
      background-size: cover;
  }
 
- form, table, #datatable{
+ form, table, #datatable, .verdana{
      font-family: "Verdana", sans-serif;
+ }
+
+ .card-bg{
+    background-image: url("http://localhost/tamixMultimedios/public/img/fondo2.png");
+	background-size: cover;
  }
 
  #resultados{
     height: 720px;
     overflow: auto;
  }
+
+/**
+** saltos de página en pdf
+    Puede utilizar CSS page-break-before/ page-break-afterproperties para crear una nueva página.
+**/
+
+ .page-break {
+    page-break-after: always;
+}
 

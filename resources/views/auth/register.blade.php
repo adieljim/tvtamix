@@ -1,8 +1,12 @@
 @extends('layouts.plantilla')
 
+@section('header')
+    <x-header/>
+@endsection
+
 @section('content')
 <div class="container">
-    <div class="mt-3 row justify-content-center">
+    <div class="mt-5 row justify-content-center">
         <div class="col-md-8">
             <div class="card text-white bg-secondary">
                 <div class="card-header">{{ __('Registro') }}</div>

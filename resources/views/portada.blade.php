@@ -3,6 +3,10 @@
 @section('css')
 @endsection
 
+@section('header')
+    <x-header/>
+@endsection
+
 @section('content')
 
 @guest
@@ -52,7 +56,7 @@
         </div>
     </div>
 @else
-    
+
     <div class="m-1">
         <div>
             <img src="{{asset('images/titulo.png')}}" alt="titulo-memoria-audiovisual-tamix">

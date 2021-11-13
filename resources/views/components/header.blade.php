@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light footerBg">
+<header class="cabeza">
+  <nav class="navbar navbar-expand-lg navbar-light footerBg">
   <div class="container">
     <a class="navbar-brand" href="{{ route('portada') }}">ACERVO AUDIOVISUAL TAMIX</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -55,3 +56,4 @@
     </div>
   </div>
 </nav>
+</header>

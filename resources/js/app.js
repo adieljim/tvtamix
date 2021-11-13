@@ -1,5 +1,13 @@
 require('./bootstrap');
+//Bootstrap Bundle
+
 require('./bootstrap/js/bootstrap.bundle.min');
+
+//Jquery 
 require('jquery/src/jquery');
-//require('jquery-ui/jquery-ui.min');
-//require( 'datatables.net-bs5/js/dataTables.bootstrap5.min' );
+
+//Bootstrao File Input
+require('bootstrap-fileinput/js/fileinput.js');
+
+
+	

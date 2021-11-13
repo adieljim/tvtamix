@@ -15,16 +15,20 @@
 
 body {
 	font-family: "Bizon", sans-serif;
-	background-image: url("http://localhost/tamixMultimedios/public/img/fondo.png");
-	background-size: cover;
 }
 
-.container {
-    height: auto;
+body::-webkit-scrollbar {
+    display: none;
 }
 
- .footerBg{
-     background-image: url("http://localhost/tamixMultimedios/public/img/footer.png");
+.cuerpo {    
+    height: 76.25vh;
+}
+
+
+
+body, .card-bg, .footerBg{
+     /*background-image: url("/images/footer.png");*/
      background-size: cover;
  }
 
@@ -32,10 +36,6 @@ body {
      font-family: "Verdana", sans-serif;
  }
 
- .card-bg{
-    background-image: url("http://localhost/tamixMultimedios/public/img/fondo2.png");
-	background-size: cover;
- }
 
  #resultados{
     height: 720px;

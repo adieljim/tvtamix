@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('js/jquery-ui/jquery-ui.min.css') }}">
 @endsection
 
+@section('title') Inicio @endsection
+
 @section('header')
 <x-header />
 @endsection
@@ -207,22 +209,28 @@
                     $('#datosIndices').append(
                         "<tr><td>" +
                         "<div class='card'>" +
-                        "<div class='card-header'>" +
-                        "<h5 class='card-title'>" + dato[key].titulo_original + "</h5>" +
-                        "</div>" +
-                        "<div class='card-body'>" +
-                        "<div class='row'><div class='col-2'>" +
-                        "<img src='http://localhost/tamixMultimedios/storage/app/public/fotogramas/" + dato[key].fotogramas[0].nombre + "' class='img-thumbnail'> " +
-                        "</div>" +
-                        "<div class='col-10'><p class='card-text'>" +
-                        "Clave: " + dato[key].clave +
-                        "<br>Sinopsis: " + dato[key].sinopsis +
-                        "<br>Indice Temático: " + dato[key].indice_tematico +
-                        "</p></div></div>" +
-                        "</div>" +
+                            "<div class='card-header'>" +
+                            "<h5 class='card-title'>" + dato[key].titulo_original + "</h5>" +
+                            "</div>" +
+                            "<div class='card-body'>" +
+                            "<div class='row'>" + 
+                                "<div class='col-6'><p class='card-text'>" +
+                                    "<strong>Clave: </strong>" + dato[key].clave +
+                                    "<br><strong>Sinopsis: </strong>" + dato[key].sinopsis +
+                                    "<br><strong>Indice Temático: </strong>" + dato[key].indice_tematico +
+                                    "</p></div><div class='col-6 text-center'>" +
+                                    "<strong>Fotogramas:</strong><br>" +
+                                "<div class='row' id='fotogramas"+key+"'>" +                         
+                            "</div></div></div></div>" +
+                            "</div>" +
                         "</div>" +
                         "</td></tr>"
-                    );
+                    );                 
+                    for (var j = 0; j < dato[key].fotogramas.length; j++) {                        
+                        $('#fotogramas'+key).append(
+                            "<img src='/storage/fotogramas/" + dato[key].fotogramas[j].nombre + "' class='col img-thumbnail'> "
+                        );                        
+                    }
                 }
             }
         }
@@ -286,24 +294,32 @@
                         "<tr><td>" +
                         "<div class='card'>" +
                         "<div class='card-header'>" +
-                        "<h5 class='card-title'>" + archivos[i].clave + " --- " + archivos[i].titulo_original + "</h5>" +
+                        "<h5 class='card-title'><strong>" + archivos[i].clave + " | " + archivos[i].titulo_original + "</strong></h5>" +
                         "</div>" +
-                        "<div class='card-body'>" +
-                        "<div class='row'><div class='col-2'>" +
-                        "<img src='http://localhost/tamixMultimedios/storage/app/public/fotogramas/" + archivos[i].fotogramas[0].nombre + "' class='img-thumbnail'> " +
+                        "<div class='card-body text-start'>" +
+                        "<div class='row'>"+
+                        "<div class='col-7'><p  class='card-text'>" +
+                        "<strong>Personajes Principales</strong>: " + archivos[i].personajes_principales +
+                        "<br><strong>Sinopsis: </strong>" + archivos[i].sinopsis +
+                        "<br><strong>Lengua: </strong>" + archivos[i].lengua +
+                        "<br><strong>Lugar de produccion: </strong>" + archivos[i].lugar_produccion +
+                        "<br><strong>Año de Produccion: </strong>" + archivos[i].anio_produccion +
+                        "<br><strong>Estado: </strong>" + archivos[i].entidad_federativa +
+                        "</p></div>" +
+                        "<div class='col-5 text-center'>" + 
+                        "<strong>Fotogramas:</strong><br>" +
+                        "<div class='row' id='fotos"+i+"'>" + 
+                        "</div></div>" +
                         "</div>" +
-                        "<div class='col-10'><p class='card-text'>" +
-                        "Personajes Principales: " + archivos[i].personajes_principales +
-                        "<br>Sinopsis: " + archivos[i].sinopsis +
-                        "<br>Lengua: " + archivos[i].lengua +
-                        "<br>Lugar de produccion: " + archivos[i].lugar_produccion +
-                        "<br>Año de Produccion: " + archivos[i].anio_produccion +
-                        "<br>Estado: " + archivos[i].entidad_federativa +
-                        "</p></div></div>" +
                         "</div>" +
                         "</div>" +
                         "</td></tr>"
                     );
+                    for (var j = 0; j < archivos[i].fotogramas.length; j++) {                        
+                        $('#fotos'+i).append(
+                            "<img src='/storage/fotogramas/" + archivos[i].fotogramas[j].nombre + "' class='col img-thumbnail'> "
+                        );                        
+                    }
                 }
             }
         }

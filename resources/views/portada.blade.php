@@ -3,6 +3,8 @@
 @section('css')
 @endsection
 
+@section('title') Portada @endsection
+
 @section('header')
     <x-header/>
 @endsection
@@ -13,14 +15,13 @@
 
 
 
-    <div class="mt-5 row justify-content-center">
-
-        <div class="col-5">
+    <div class="d-flex align-items-center">
+        <div class="my-5 col-5">
             <div class="text-center">
                 <img src="{{asset('storage/img/iconos/tour-guide.png')}}" width="100px">
             </div>
 
-            <div class="card bg-secondary text-light">
+            <div class="card bg-transparent">
                 <div class="card-header text-center">
                     <h3>Entrar como visitante:</h3>
                 </div>
@@ -53,20 +54,20 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div>            
     </div>
 @else
 
-    <div class="m-1">
-        <div>
-            <img src="{{asset('images/titulo.png')}}" alt="titulo-memoria-audiovisual-tamix">
+    <div class="col-6">
+        <div class="d-flex align-items-center">
+            <img src="{{asset('images/titulo.png')}}" alt="titulo-memoria-audiovisual-tamix" class="img-thumbnail border-0 bg-transparent">
         </div>
-        <div class="m-2">
-            <a href="{{route('archivos.create')}}" class="btn btn-dark">Capturar archivo</a>
-            <a href="{{route('archivos.index')}}" class="btn btn-dark">Ver Archivos</a>
-            <a href="{{route('inicio')}}" class="btn btn-dark">Buscar</a>
-        </div>
-    </div>
+        <div class="d-flex align-items-center justify-content-start">
+            <a href="{{route('archivos.create')}}" class="btn btn-dark mx-1">Capturar archivo</a>
+            <a href="{{route('archivos.index')}}" class="btn btn-dark mx-1">Ver Archivos</a>
+            <a href="{{route('inicio')}}" class="btn btn-dark mx-1">Buscar</a>
+        </div>    
+    </div>    
 
 @endguest
 

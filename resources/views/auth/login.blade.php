@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-
+@section('title') Login @endsection
 @section('content')
 <div class="container ">
 

@@ -1,6 +1,24 @@
 @extends('layouts.plantilla')
 
-@section('title') Mostrar Archivo @endsection
+@section('title') Vista Archivo @endsection
+
+@section('css')
+
+<style type="text/css">
+    
+    @media print{
+        #botones {display: none;}
+        #imprimible {left: 0%;}
+    }
+
+    body{
+            background-image: url("/img/fondo2.png");
+            background-size: cover;
+    }
+
+</style>
+
+@endsection
 
 @section('content')
 
@@ -13,7 +31,7 @@ $info= $data['info'];
 date_default_timezone_set('America/Mexico_City');
 @endphp
 
-<div class="mt-2 row">
+<div class="mt-2 row" id="botones">
     <div class="col text-start">
         <a href="{{route('archivos.index')}}" class="btn btn-danger">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
@@ -38,14 +56,14 @@ date_default_timezone_set('America/Mexico_City');
         <div class="card-header footerBg">
             <div class="row p-3">
                 <div class="col-2 text-start">
-                    <img src="{{asset('images/logo_tama.png')}}" class="img-thumbnail" alt="logo-tamazulapam-mixe">
+                    <img src="{{asset('images/logo_tama.png')}}" class="img-thumbnail border-0 bg-transparent" alt="logo-tamazulapam-mixe">
                 </div>
                 <div class="col text-center">
                     <h1>ACERVO AUDIOVISUAL TAMIX</h1>
                     <h5>{{ date('d/m/Y') }}</h5>
                 </div>
                 <div class="col-2 text-end">
-                    <img src="{{asset('images/logo.png')}}" class="img-thumbnail" alt="logo-tvTamix">
+                    <img src="{{asset('images/logo.png')}}" class="img-thumbnail border-0 bg-transparent" alt="logo-tvTamix">
                 </div>
             </div>
         </div>
@@ -133,15 +151,11 @@ date_default_timezone_set('America/Mexico_City');
                 <div class="text-center">
                     <h5 class="card-title"><strong>Fotogramas.</strong></h5>
                     <div class="row">
+                        @for ($i = 0; $i < count($fotogramas); $i++)
                         <div class="col">
-                            <img class="rounded img-thumbnail" src="{{ route('img', $fotogramas[0]->nombre ) }}" />
+                            <img class="rounded img-thumbnail" width="300" src="{{ route('img', $fotogramas[$i]->nombre ) }}" />
                         </div>
-                        <div class="col">
-                            <img class="rounded img-thumbnail" src="{{ route('img', $fotogramas[1]->nombre ) }}" />
-                        </div>
-                        <div class="col">
-                            <img class="rounded img-thumbnail" src="{{ route('img', $fotogramas[2]->nombre ) }}" />
-                        </div>
+                        @endfor
                     </div>
 
 
@@ -151,7 +165,7 @@ date_default_timezone_set('America/Mexico_City');
         <div class="card-footer p-4 text-muted footerBg ">
             <div class="row d-flex align-items-center">
                 <div class="col-2 m-auto text-center">
-                    <img src="{{asset('images/logo.png')}}" class="img-thumbnail" alt="logo-tvTamix">
+                    <img src="{{asset('images/logo.png')}}" class="img-thumbnail border-0 bg-transparent" alt="logo-tvTamix">
                 </div>
                 <div class="col text-start">
                     <span class="text-muted">
@@ -162,7 +176,7 @@ date_default_timezone_set('America/Mexico_City');
                     </span>
                 </div>
                 <div class="col-6 m-auto">
-                    <img src="{{asset('images/logos-cultura.png')}}" class="img-thumbnail" alt="logo-secretariaCultura-imcine-focine">
+                    <img src="{{asset('images/logos-cultura.png')}}" class="img-thumbnail border-0 bg-transparent" alt="logo-secretariaCultura-imcine-focine">
                 </div>
             </div>
         </div>

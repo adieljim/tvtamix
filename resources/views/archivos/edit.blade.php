@@ -5,7 +5,7 @@
 @section('css')
     <style>
         body{
-            background-image: url("http://localhost/tamixMultimedios/public/img/fondo2.png");
+            background-image: url("/img/fondo2.png");
             background-size: cover;
         }
     </style>
@@ -98,8 +98,8 @@
 					</div>
 
 					<div class="col-4">
-						<label for="" class="form-label">Duracion</label>
-						<input type="time" name="duracion" class="form-control @error('duracion') is-invalid @enderror" id="duracion" value="{{ $archivo->duracion }}" required>
+						<label for="" class="form-label">Duracion <dfn>(minutos).<dfn></label>
+						<input type="number" name="duracion" min="1" max="1000" class="form-control @error('duracion') is-invalid @enderror"  required value="{{old('duracion')}}">
 						@error('duracion')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

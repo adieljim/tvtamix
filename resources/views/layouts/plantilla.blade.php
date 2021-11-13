@@ -8,17 +8,30 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+	<style type="text/css">
+		body {
+			background-image: url("{{asset('img/fondo.png')}}");
+		}
+		.footerBg{
+		     background-image: url("{{asset('img/footer.png')}}");
+		 }
+		.card-bg{
+		    background-image: url("{{asset('img/fondo2.png')}}");
+		 }
+
+	</style>
 	<script src="{{ asset('js/app.js') }}"></script>
 
 	@yield('css')
 
 
 
-	<title>@yield('title', env('APP_NAME'))</title>
+	<title>TvTamix | @yield('title')</title>
 </head>
 <body>
     @yield('header')
-	<div class="container">
+    <div class="cuerpo">
+    	<div class="container">
 
         @if(session("mensaje") && session("tipo"))
             <div class="mt-auto alert {{ session('tipo') }} alert-dismissible fade show" role="alert">
@@ -27,8 +40,7 @@
             </div>
         @endif
 		@yield('content')
-	</div>
-    <div class="pb-5"></div>
+	</div>    </div>	
     @yield('footer')
 	@yield('js')
 </body>

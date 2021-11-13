@@ -5,6 +5,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('js/DataTables/responsive/css/responsive.bootstrap5.min.css') }}">
 @endsection
 
+@section('title') Archivos @endsection
+
 @section('header')
 <x-header />
 @endsection

@@ -3,6 +3,8 @@
 @section('css')
 @endsection
 
+@section('title') Visitante @endsection
+
 @section('header')
 <x-header />
 @endsection
@@ -11,9 +13,9 @@
 
 
 <div class="mt-3">
-    <img src="{{asset('images/titulo.png')}}" alt="titulo-memoria-audiovisual-tamix">
+    <img src="{{asset('images/titulo.png')}}" alt="titulo-memoria-audiovisual-tamix" class="img-thumbnail border-0 bg-transparent">
 </div>
-<div class="m-2">
+<div class="my-3">
     <a href="{{route('inicio')}}" class="btn btn-dark">Ver catálogo</a>
 </div>
 

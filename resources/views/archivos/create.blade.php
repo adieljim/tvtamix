@@ -4,7 +4,7 @@
 @section('css')
     <style>
         body{
-            background-image: url("http://localhost/tamixMultimedios/public/img/fondo2.png");
+            background-image: url("/img/fondo2.png");
             background-size: cover;
         }
     </style>
@@ -29,7 +29,7 @@
 		$('.oculta').hide(0);
 		var elemento = "." + tipo;
 		$(elemento).show(0);
-	}
+	}	
 </script>
 
 @php
@@ -103,11 +103,8 @@ $categorias = $formato['datos']->categorias_consulta;
 					</div>
 
 					<div class="col-4">
-						<label for="" class="form-label">Duracion</label>
-						<time>
-							<input type="time" name="duracion"
-							class="form-control @error('duracion') is-invalid @enderror"  required value="{{old('duracion')}}" step="0.001">
-						</time>
+						<label for="" class="form-label">Duracion <dfn>(minutos).<dfn></label>
+						<input type="number" name="duracion" min="1" max="1000" class="form-control @error('duracion') is-invalid @enderror"  required value="{{old('duracion')}}">
 						@error('duracion')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -231,12 +228,12 @@ $categorias = $formato['datos']->categorias_consulta;
 					<div class="col-6">
 						<label for="" class="form-label">Fotogramas de Referencia</label>
 						<input type="file" multiple name="fotogramas[]"
-						class="form-control @error('fotogramas[]') is-invalid @enderror" required id="fotogramas" accept=".jpg, .jpeg, .png" >
+						class="form-control @error('fotogramas[]') is-invalid @enderror" required id="fotogramasCreate" accept="image/*" >
 						@error('fotogramas[]')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                        @enderror
+                        @enderror                        
 					</div>
 
 					<div class="col-12">
@@ -487,3 +484,5 @@ $categorias = $formato['datos']->categorias_consulta;
 
 @endsection
 
+@section('js')
+@endsection

@@ -1,5 +1,7 @@
 @extends('layouts.plantilla')
 
+@section('title') Registro @endsection
+
 @section('header')
     <x-header/>
 @endsection

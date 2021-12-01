@@ -104,7 +104,7 @@ $categorias = $formato['datos']->categorias_consulta;
 
 					<div class="col-4">
 						<label for="" class="form-label">Duracion <dfn>(minutos).<dfn></label>
-						<input type="number" name="duracion" min="1" max="1000" class="form-control @error('duracion') is-invalid @enderror"  required value="{{old('duracion')}}">
+						<input type="text" name="duracion" class="form-control @error('duracion') is-invalid @enderror"  required value="{{old('duracion')}}">
 						@error('duracion')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

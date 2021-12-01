@@ -99,7 +99,7 @@
 
 					<div class="col-4">
 						<label for="" class="form-label">Duracion <dfn>(minutos).<dfn></label>
-						<input type="number" name="duracion" min="1" max="1000" class="form-control @error('duracion') is-invalid @enderror"  required value="{{ $archivo->duracion }}">
+						<input type="text" name="duracion" min="1" max="1000" class="form-control @error('duracion') is-invalid @enderror"  required value="{{ $archivo->duracion }}">
 						@error('duracion')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

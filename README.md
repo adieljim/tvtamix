@@ -19,7 +19,7 @@ El sistema se desarrolló con el marco de trabajo <a href="https://laravel.com/"
 
 ## Instalacion del proyecto.
 
-Duplicar el archivo ".env.example" que se encuentra en el repositorio, y renombrar el archivo duplicado a ".env"
+1) Duplicar el archivo ".env.example" que se encuentra en el repositorio, y renombrar el archivo duplicado a ".env"
 
 Configurar la base de datos en el archivo ".env"
 
@@ -35,3 +35,9 @@ DB_PORT=3306 <br>
 DB_DATABASE=tvtamix <br>
 DB_USERNAME=root <br>
 DB_PASSWORD= <br>
+
+2) Migrar las tablas a la base de datos.
+
+- Con composer previamente instalado: se ubica en la ruta del proyecto en la terminal/consola.
+- Se ejecuta el siguiente comando:
+    <code>php artisan migrate</code>

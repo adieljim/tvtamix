@@ -19,4 +19,6 @@ El sistema se desarrolló con el marco de trabajo <a href="https://laravel.com/"
 
 ## Instalacion del proyecto.
 
-Duplicar el archivo .env
+Duplicar el archivo ".env.example" que se encuentra en el repositorio, y renombrar el archivo duplicado a ".env"
+
+Configurar la base de datos en el archivo ".env"

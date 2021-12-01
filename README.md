@@ -27,9 +27,11 @@ Configurar la base de datos en el archivo ".env"
 - En DB_USERNAME el usuario de la base de datos.
 - En DB_PASSWORD la contraseña de la base de datos.
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=tvtamix
-DB_USERNAME=root
-DB_PASSWORD=
+Ejemplo:
+
+DB_CONNECTION=mysql <br>
+DB_HOST=127.0.0.1 <br>
+DB_PORT=3306 <br>
+DB_DATABASE=tvtamix <br>
+DB_USERNAME=root <br>
+DB_PASSWORD= <br>

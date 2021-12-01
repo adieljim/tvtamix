@@ -4,7 +4,7 @@ Catálogo digital que facilita la documentacion del acervo audiovisual recopilad
 
 ## Detalles del sistema:
 
-El sistema se desarrolló con el marco de trabajo <a href="https://laravel.com"><strong>Laravel </strong></a>
+El sistema se desarrolló con el marco de trabajo <a href="https://laravel.com/"><strong>Laravel </strong></a>
 
 - Las funcinalidades principales son: ver, crear, editar y eliminar el archivo para el catalogo audiovisual.
 - Cuenta con perfiles de usuario, para un acceso controlado.
@@ -15,9 +15,8 @@ El sistema se desarrolló con el marco de trabajo <a href="https://laravel.com">
 - Apache Server.
 - Php >7.3.
 - MariaDB.
-- Composer.
-- Npm
+- <a href="https://getcomposer.org/">Composer</a>.
 
 ## Instalacion del proyecto.
 
-
+Duplicar el archivo .env

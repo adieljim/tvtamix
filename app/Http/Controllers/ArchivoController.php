@@ -113,7 +113,7 @@ class ArchivoController extends Controller
             'produccion_ejecutiva' => $request->produccion_ejecutiva,
             'lugar_produccion' => $request->lugar_produccion,
             'anio_produccion' => $request->anio_produccion,
-            'entidad_federativa' => $request->entidad_federativa,
+            'localidad' => $request->localidad,
             'sinopsis' => $request->sinopsis,
         ]);
 
@@ -257,7 +257,7 @@ class ArchivoController extends Controller
             'produccion_ejecutiva' => $request->produccion_ejecutiva,
             'lugar_produccion' => $request->lugar_produccion,
             'anio_produccion' => $request->anio_produccion,
-            'entidad_federativa' => $request->entidad_federativa,
+            'localidad' => $request->localidad,
             'sinopsis' => $request->sinopsis,
         ]);
 

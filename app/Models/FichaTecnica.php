@@ -23,7 +23,7 @@ class FichaTecnica extends Model
         'produccion_ejecutiva',
         'lugar_produccion',
         'anio_produccion',
-        'entidad_federativa',
+        'localidad',
         'sinopsis',
     ];
 }

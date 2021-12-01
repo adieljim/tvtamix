@@ -16,6 +16,14 @@
             background-size: cover;
     }
 
+    textarea{
+        overflow: hidden;
+    }
+
+    p {
+        text-align: justify;
+    }
+
 </style>
 
 @endsection
@@ -60,6 +68,7 @@ date_default_timezone_set('America/Mexico_City');
                 </div>
                 <div class="col text-center">
                     <h1>ACERVO AUDIOVISUAL TAMIX</h1>
+                    <h4>TAMAZULÁPAM DEL ESPÍRITU SANTO MIXE, OAXACA.</h4>
                     <h5>{{ date('d/m/Y') }}</h5>
                 </div>
                 <div class="col-2 text-end">
@@ -70,12 +79,12 @@ date_default_timezone_set('America/Mexico_City');
         <div class="card-body">
             <div class="row">
                 <div class="col">
-                    <h5 class="card-title"><strong>Archivo.</strong></h5>
+                    <h5 class="card-title"><strong>IDENTIFICACIÓN DEL ARCHIVO.</strong></h5>
                     <hr>
                     <div class="verdana">
                         <strong>Titulo: </strong> {{$archivo->titulo_original}}
-                        <strong><br>Clave: </strong> {{ $archivo->clave }}
-                        <strong><br>Estado: </strong>{{ $ficha->entidad_federativa }}
+                        <br><strong>Clave: </strong> {{ $archivo->clave }}
+                        <br><strong>Localidad: </strong> {{ $ficha->localidad }}
                     </div>
 
                     <hr>
@@ -89,19 +98,19 @@ date_default_timezone_set('America/Mexico_City');
                             </tr>
                             <tr>
                                 <td><strong>Codec alta calidad: <br></strong>{{$archivo->codec_ac}}</td>
-                                <td colspan="2"><strong>Huella de video(alta calidad): <br></strong>{{$archivo->huella_digital_video_ac}}</td>
+                                <td colspan="2"><strong>Huella digital de video en alta calidad: <br></strong>{{$archivo->huella_digital_video_ac}}</td>
                             </tr>
                             <tr>
                                 <td><strong>Codec baja calidad: <br></strong>{{$archivo->codec_bc}}</td>
-                                <td colspan="2"><strong>Huella de video(baja calidad): <br></strong>{{$archivo->huella_digital_video_bc}}</td>
+                                <td colspan="2"><strong>Huella digital de video en baja calidad: <br></strong>{{$archivo->huella_digital_video_bc}}</td>
                             </tr>
                             <tr>
-                                <td><strong>Duracion: <br></strong>{{$archivo->duracion}}</td>
-                                <td colspan="2"><strong>Digitalización: <br></strong>{{$archivo->fecha_digitalizacion}}</td>
+                                <td><strong>Duracion (minutos): <br></strong>{{$archivo->duracion}}</td>
+                                <td colspan="2"><strong>Fecha de digitalización: <br></strong>{{$archivo->fecha_digitalizacion}}</td>
                             </tr>
                         </tbody>
                     </table>
-                    <h5 class="card-title"><strong>Ficha Técnica.</strong></h5>
+                    <h5 class="card-title"><strong>FICHA TÉCNICA.</strong></h5>
                     <hr>
                     <table class="table table-secondary">
                         <tbody>
@@ -121,12 +130,12 @@ date_default_timezone_set('America/Mexico_City');
                                 <td><strong>Lugar de producción: <br></strong>{{$ficha->lugar_produccion}}</td>
                             </tr>
                             <tr>
-                                <td><strong>Año de producción: <br></strong>{{$ficha->anio_produccion}}</td>
-                                <td colspan="2"><strong>Sinopsis: <br></strong>{{$ficha->sinopsis}}</td>
+                                <td colspan="3"><strong>Año de producción: <br></strong>{{$ficha->anio_produccion}}</td>                                
                             </tr>
+                            <tr><td colspan="3"><strong>Sinopsis: <br></strong><p class="text-break">{{$ficha->sinopsis}}</p></td></tr>
                         </tbody>
                     </table>
-                    <h5 class="card-title"><strong>General.</strong></h5>
+                    <h5 class="card-title"><strong>INFORMACIÓN GENERAL.</strong></h5>
                     <hr>
                     <table class="table table-secondary">
                         <tbody>
@@ -141,7 +150,7 @@ date_default_timezone_set('America/Mexico_City');
                                 <td colspan="3"><strong>Categorias para consulta: <br></strong>{{$info->categoria_consulta}}</td>
                             </tr>
                             <tr>
-                                <td colspan="3"><strong>Descripción general: <br></strong>{{$info->descripcion_general}}</td>
+                                <td colspan="3"><strong>Descripción general: <br></strong><p class="text-break">{{$info->descripcion_general}}</p></td>
                             </tr>
                         </tbody>
                     </table>
@@ -164,9 +173,6 @@ date_default_timezone_set('America/Mexico_City');
         </div>
         <div class="card-footer p-4 text-muted footerBg ">
             <div class="row d-flex align-items-center">
-                <div class="col-2 m-auto text-center">
-                    <img src="{{asset('images/logo.png')}}" class="img-thumbnail border-0 bg-transparent" alt="logo-tvTamix">
-                </div>
                 <div class="col text-start">
                     <span class="text-muted">
                         PROYECTO REALIZADO CON EL APOYO DE:

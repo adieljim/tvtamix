@@ -25,8 +25,8 @@ class CreateFichaTecnicaTable extends Migration
             $table->string('produccion_ejecutiva');
             $table->string('lugar_produccion');
             $table->string('anio_produccion');
-            $table->string('entidad_federativa');
-            $table->string('sinopsis');
+            $table->string('localidad');
+            $table->longText('sinopsis');
             $table->timestamps();
 
             $table->foreign('id')->references('id')->on('archivos');

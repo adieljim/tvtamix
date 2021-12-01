@@ -337,24 +337,14 @@
 					</div>
 
 					<div class="col-4">
-						<label for="" class="form-label">Entidad Federativa</label>
-						<select name="entidad_federativa" class="form-select @error('entidad_federativa') is-invalid @enderror" id="entidad_federativa" required>
-							<option disabled>Opciones...</option>
-							@foreach($entidades as $e)
-								@if ($e == $ficha->entidad_federativa)
-									<option value="{{$e}}" selected>{{$e}}</option>
-								@else
-									<option value="{{$e}}">{{$e}}</option>
-								@endif
-							@endforeach
-						</select>
-						@error('entidad_federativa')
+						<label for="localidad" class="form-label">Localidad o Municipio</label>
+						<input id="localidad" type="text" name="localidad" class="form-control @error('personajes_principales') is-invalid @enderror" required value="{{ $ficha->localidad }}">
+						@error('localidad')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
 					</div>
-
 					<div class="col-6">
 						<label for="" class="form-label">Sinopsis</label>
 						<textarea name="sinopsis" class="form-control @error('sinopsis') is-invalid @enderror" required>{{ $ficha->sinopsis }}</textarea>

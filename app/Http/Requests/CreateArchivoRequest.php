@@ -53,7 +53,7 @@ class CreateArchivoRequest extends FormRequest
             'produccion_ejecutiva' => 'required',
             'lugar_produccion' => 'required',
             'anio_produccion' => 'required',
-            'entidad_federativa' => 'required',
+            'localidad' => 'required',
             'sinopsis' => 'required'
 
         ];

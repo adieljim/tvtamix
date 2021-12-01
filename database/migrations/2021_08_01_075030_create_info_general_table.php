@@ -17,7 +17,7 @@ class CreateInfoGeneralTable extends Migration
             $table->unsignedBigInteger('id');
             $table->string('lengua');
             $table->string('indice_tematico');
-            $table->string('descripcion_general');
+            $table->longText('descripcion_general');
             $table->string('personajes_principales');
             $table->string('categoria_consulta');
             $table->timestamps();

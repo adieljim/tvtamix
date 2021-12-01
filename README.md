@@ -27,14 +27,26 @@ Configurar la base de datos en el archivo ".env"
 - En DB_USERNAME el usuario de la base de datos.
 - En DB_PASSWORD la contraseña de la base de datos.
 
-Ejemplo:
-
-DB_CONNECTION=mysql <br>
-DB_HOST=127.0.0.1 <br>
+Ejemplo: <br>
+<code>
+DB_CONNECTION=mysql 
+</code><br>
+<code>
+DB_HOST=127.0.0.1 
+</code><br>
+<code>
 DB_PORT=3306 <br>
-DB_DATABASE=tvtamix <br>
-DB_USERNAME=root <br>
-DB_PASSWORD= <br>
+</code><br>
+<code>
+DB_DATABASE=tvtamix 
+</code><br>
+<code>
+DB_USERNAME=root 
+</code><br>
+<code>
+DB_PASSWORD= 
+</code><br>
+<br><br>
 
 2) Migrar las tablas a la base de datos.
 

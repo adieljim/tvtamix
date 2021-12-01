@@ -22,3 +22,14 @@ El sistema se desarrolló con el marco de trabajo <a href="https://laravel.com/"
 Duplicar el archivo ".env.example" que se encuentra en el repositorio, y renombrar el archivo duplicado a ".env"
 
 Configurar la base de datos en el archivo ".env"
+
+- En DB_DATABASE el nombre de la base de datos.
+- En DB_USERNAME el usuario de la base de datos.
+- En DB_PASSWORD la contraseña de la base de datos.
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tvtamix
+DB_USERNAME=root
+DB_PASSWORD=
